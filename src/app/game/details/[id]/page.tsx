@@ -91,9 +91,7 @@ export default async function Details({ params }: DetailsProps) {
       {details && (
         <main className="w-full flex flex-col gap-5">
           <Banner item={details} />
-          <h2 className="text-center font-extrabold md:text-2xl ">
-            {details.title}
-          </h2>{" "}
+      
           <hr className="text-green-500" />
           <p className="backdrop-blur-xl  bg-linear-to-l to-zinc-800/50 from-emerald-300/20 py-2.5 px-3 rounded-tl-2xl rounded-br-2xl border-2 border-zinc-700/60  drop-shadow-md drop-shadow-zinc-800/40">
             {details.description}

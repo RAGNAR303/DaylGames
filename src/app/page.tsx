@@ -5,6 +5,7 @@ import { Card } from "../components/Card";
 import { GameProps } from "../utils/types/game";
 import Link from "next/link";
 import { Input } from "../components/Input";
+import { Banner } from "../components/container/banner";
 
 async function getRandonGame() {
   try {
@@ -43,25 +44,7 @@ export default async function Home() {
       </h1>
       <main className="flex flex-col gap-2.5 mt-5 w-full max-w-6xl">
         <Link href={`/game/details/${game.id}`} className="w-full">
-          <section className="w-full h-64 items-center  rounded shadow-2xs overflow-hidden relative bg-black">
-            <Image
-              src={game.image_url}
-              alt={game.title}
-              quality={100}
-              priority={true}
-              fill={true}
-              className="max-h-96 object-cover hover:scale-105 duration-300 opacity-50 hover:opacity-100 transition-all"
-              sizes="(max-width:768px) 100vw , (max-width:1200px) 44vw"
-            />
-            <div className="absolute bottom-1.5 left-1.5 flex py-2 px-4 items-center gap-2  bg-zinc-800/50  backdrop-blur rounded">
-              <p className="font-bold text-shadow-2xs text-shadow-zinc-900  ">
-                {game.title}
-              </p>
-              <button className="bg-gray-300/15 rounded-full">
-                <FaRegCirclePlay className="animate-pulse " />
-              </button>
-            </div>
-          </section>
+          <Banner item={game} />
         </Link>
 
         <Input />

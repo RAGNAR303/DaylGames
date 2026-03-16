@@ -18,8 +18,8 @@ export function Banner({ item }: BannerProps) {
         className="max-h-96 object-cover hover:scale-105 duration-300 opacity-50 hover:opacity-100 transition-all"
         sizes="(max-width:768px) 100vw , (max-width:1200px) 44vw"
       />
-      <div className="absolute bottom-0 flex py-2 px-4 items-center gap-2  bg-zinc-800/50  backdrop-blur rounded-tr-3xl border-2 border-green-500">
-        <p className="font-extrabold text-shadow-2xs text-shadow-zinc-900 text-green-500 ">
+      <div className="absolute bottom-0 flex py-2 px-4 items-center gap-2  bg-zinc-800/50  backdrop-blur rounded-tr-3xl ">
+        <p className="font-extrabold text-shadow-2xs text-shadow-zinc-900 text-green-500  md:text-2xl ">
           {item.title}
         </p>
         <button className="bg-gray-300/15 rounded-full">

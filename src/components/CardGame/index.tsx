@@ -1,14 +1,44 @@
-import { Label } from "../label";
-import { BiSolidJoystickButton } from "react-icons/bi";
+"use client";
+import { useState } from "react";
+import { RiEditCircleFill } from "react-icons/ri";
+import { MdCancel } from "react-icons/md";
 export function GameCard() {
+  const [input, setInput] = useState("");
+  const [showInput, setShowInput] = useState(false);
+
   return (
-    <Label>
-      <button>
-        <BiSolidJoystickButton />
-      </button>
-      <div>
-        <input type="text" placeholder="Adicionar Jogo" />
+    <div className={`box-theme flex-col h-40 grow justify-between ${showInput ? "scale-[1.01] shadow-md shadow-emerald-600/80" : ""}`}>
+      <div className="flex gap-2">
+        <button onClick={() => setShowInput(!showInput)}>
+          {!showInput ? (
+            <RiEditCircleFill className="text-3xl" />
+          ) : (
+            <MdCancel className="text-3xl" />
+          )}
+        </button>
+
+        {showInput && (
+          <input
+            type="text"
+            value={input}
+            onChange={(event) => setInput(event.target.value)}
+            placeholder="Digite o nome do jogo..."
+            className="bg-emerald-500/25 w-full border-2 border-zinc-700/60 p-1 rounded-md"
+          />
+        )}
       </div>
-    </Label>
+
+      {!showInput && !input && (
+        <div>
+          <p className="font-black">Adicione um Jogo</p>
+        </div>
+      )}
+
+      {input && (
+        <div>
+          <p className="font-black">{input}</p>
+        </div>
+      )}
+    </div>
   );
 }

@@ -25,11 +25,14 @@ export default function Profile() {
           </Button>
         </div>
       </section>
-      <section className="w-full flex  gap-3 flex-wrap mt-10 ">
-        <GameCard />
-        <GameCard />
-        <GameCard />
-      </section>
+
+        <p className="font-black text-2xl mt-10">Jogos Favoritos</p>
+        <section className="w-full flex h-full  gap-3 flex-wrap mt-10 ">
+          <GameCard />
+          <GameCard />
+          <GameCard />
+        </section>
+    
     </Container>
   );
 }
