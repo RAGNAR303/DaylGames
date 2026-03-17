@@ -6,9 +6,7 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--fontcolor);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-linear-240 from-neutral-950 via-neutral-900 to-neutral-950 text-zinc-200
 }
 
 .box-theme {
