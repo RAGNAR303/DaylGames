@@ -1,7 +1,9 @@
+import { Button } from "@/src/components/Button";
 import { Card } from "@/src/components/Card";
 import { Container } from "@/src/components/container";
 import { Input } from "@/src/components/Input";
 import { GameProps } from "@/src/utils/types/game";
+import Link from "next/link";
 
 import { PiSmileySadBold } from "react-icons/pi";
 interface SearchProps {
@@ -35,16 +37,19 @@ export default async function Search({ params }: SearchProps) {
       <main className="w-full min-h-2/3">
         <Input />
         {!games && (
-          <div className="flex flex-col  text-center  items-center text-emerald-500">
+          <div className="flex flex-col gap-2 h-80 text-center justify-center  items-center text-emerald-500">
             <PiSmileySadBold className=" text-6xl" />
-            <p>Nenhum game encontrado...</p>
+            <p className="font-extrabold">Nenhum game encontrado...</p>
+            <Link href={"/"}>
+              <Button>Retorna para home</Button>
+            </Link>
           </div>
         )}
         {games && (
           <h2 className="mt-5 font-bold md:text-2xl">
-            Encontramos{" "}
+            Encontramos
             <span className="text-emerald-500">{games.length} </span>games pela
-            pesquisa.{" "}
+            pesquisa.
           </h2>
         )}
         <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 mt-6">

@@ -4,6 +4,12 @@ import userAvatar from "@/public/user.png";
 import { Button } from "@/src/components/Button";
 import { FaShareAlt } from "react-icons/fa";
 import { GameCard } from "@/src/components/CardGame";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Meu perfil - Dalygames sua plataforma de jogos!",
+  description: "Perfil Ragnar303",
+};
 
 export default function Profile() {
   return (
@@ -26,13 +32,12 @@ export default function Profile() {
         </div>
       </section>
 
-        <p className="font-black text-2xl mt-10">Jogos Favoritos</p>
-        <section className="w-full flex h-full  gap-3 flex-wrap mt-10 ">
-          <GameCard />
-          <GameCard />
-          <GameCard />
-        </section>
-    
+      <p className="font-black text-2xl mt-10">Jogos Favoritos</p>
+      <section className="w-full flex h-full flex-col  gap-3 md:flex-wrap md:flex-row mt-10 ">
+        <GameCard />
+        <GameCard />
+        <GameCard />
+      </section>
     </Container>
   );
 }

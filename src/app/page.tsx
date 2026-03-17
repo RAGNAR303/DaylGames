@@ -1,6 +1,4 @@
-import Image from "next/image";
 import { Container } from "../components/container";
-import { FaRegCirclePlay } from "react-icons/fa6";
 import { Card } from "../components/Card";
 import { GameProps } from "../utils/types/game";
 import Link from "next/link";

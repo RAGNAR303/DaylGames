@@ -6,15 +6,26 @@ export function GameCard() {
   const [input, setInput] = useState("");
   const [showInput, setShowInput] = useState(false);
 
+  function handledFavorit() {
+    setShowInput(!showInput);
+
+    if (input !== "") {
+      return;
+    }
+    setInput(input);
+    setInput("");
+  }
+
   return (
-    <div className={`box-theme flex-col h-40 grow justify-between ${showInput ? "scale-[1.01] shadow-md shadow-emerald-600/80" : ""}`}>
+    <div
+      className={`box-theme flex-col h-40  grow justify-between ${showInput ? "scale-[1.01] shadow-md shadow-emerald-600/80" : ""}`}
+    >
       <div className="flex gap-2">
-        <button onClick={() => setShowInput(!showInput)}>
-          {!showInput ? (
-            <RiEditCircleFill className="text-3xl" />
-          ) : (
-            <MdCancel className="text-3xl" />
-          )}
+        <button
+          onClick={handledFavorit}
+          className="text-3xl hover:scale-110 duration-200 transition-all"
+        >
+          {!showInput ? <RiEditCircleFill /> : <MdCancel />}
         </button>
 
         {showInput && (
@@ -36,6 +47,7 @@ export function GameCard() {
 
       {input && (
         <div>
+          <p>Jogo favorito: </p>
           <p className="font-black">{input}</p>
         </div>
       )}
